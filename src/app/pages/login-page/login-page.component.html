@@ -1,0 +1,45 @@
+<div class="column">
+  <img class="logo" src="assets/img/index.png" alt="" srcset="" />
+
+  <h1 class="decorated-text">SystemGroup</h1>
+
+  <form action="">
+    <p class="fa">
+      <mat-form-field appearance="outline" [ngStyle]="{ width: '230px' }">
+        <mat-label>نام کاربری</mat-label>
+        <input matInput [(ngModel)]="username" name="username" />
+      </mat-form-field>
+    </p>
+
+    <p class="fa">
+      <mat-form-field appearance="outline" [ngStyle]="{ width: '230px' }">
+        <mat-label>رمز عبور</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          name="password"
+          [(ngModel)]="password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </p>
+    <p>
+      <button
+        mat-raised-button
+        color="primary"
+        [ngStyle]="{ width: '230px', height: '46px' }"
+        (click)="login()"
+      >
+        Login
+      </button>
+    </p>
+  </form>
+</div>
