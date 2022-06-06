@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginPageComponent implements OnInit {
   hide = true;
   username = '';
-  password: string = '123';
+  password: string = '';
 
   constructor() {}
 
@@ -16,5 +16,6 @@ export class LoginPageComponent implements OnInit {
 
   login() {
     console.log('username :', this.username, 'password:', this.password);
+    
   }
 }

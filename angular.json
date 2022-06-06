@@ -98,5 +98,8 @@
       }
     }
   },
-  "defaultProject": "pwa-site"
+  "defaultProject": "pwa-site",
+  "cli": {
+    "analytics": false
+  }
 }

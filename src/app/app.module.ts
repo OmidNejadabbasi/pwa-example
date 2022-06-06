@@ -15,6 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JWTService } from './jwt.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { MatInputModule } from '@angular/material/input';
     ]),
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,
@@ -39,7 +43,10 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JWTService, multi: true },
+    AuthService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
